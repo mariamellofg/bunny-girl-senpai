@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunny Girl Senpai | Dream World</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --blue: #9bcaff;
+  --pink: #ffc8e2;
+  --purple: #c9b7ff;
+  --white: #ffffff;
+  --dark: #252b49;
+  --glass: rgba(255,255,255,.58);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--dark);
+  background: linear-gradient(135deg,#d8eaff,#fce2f1,#e5ddff,#d8f1ff);
+  background-size: 300% 300%;
+  animation: sky 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes sky {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { font-family: inherit; }
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 6%;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #ffffffaa;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #7378c9;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  align-items: center;
+}
+
+nav a {
+  font-size: .85rem;
+  font-weight: 800;
+  transition: .3s;
+}
+
+nav a:hover { color: #b17bd8; }
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 7%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1150px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: #ffffffa6;
+  border: 1px solid white;
+  color: #7972bd;
+  font-size: .8rem;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem,6vw,5.4rem);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,#798be5,#c579c8,#e9a2c9);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero p {
+  line-height: 1.9;
+  font-size: 1.02rem;
+  max-width: 560px;
+  color: #535b7d;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px #9a9de955;
+}
+
+.btn-primary {
+  background: linear-gradient(100deg,#9baef8,#d6a7eb);
+  color: white;
+}
+
+.btn-secondary {
+  background: #ffffffb8;
+  border: 1px solid white;
+  color: #7776bd;
+}
+
+.hero-art {
+  min-height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.orbit {
+  position: absolute;
+  width: min(380px,90vw);
+  aspect-ratio: 1;
+  border: 2px solid #ffffffa8;
+  border-radius: 50%;
+  animation: rotate 25s linear infinite;
+}
+
+.orbit::before, .orbit::after {
+  content: "✦";
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 0 18px #a9a8ff;
+}
+
+.orbit::before { top: 12%; left: 15%; }
+.orbit::after { bottom: 12%; right: 10%; }
+
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+.art-card {
+  width: min(310px,75vw);
+  height: 390px;
+  position: relative;
+  border-radius: 48% 48% 30px 30px;
+  background: linear-gradient(160deg,#d6e7ff,#f5d5ed,#d9d2ff);
+  border: 5px solid #ffffffc9;
+  box-shadow: 0 25px 70px #8c8ecb44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+.moon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #ffffffad;
+  top: 35px;
+  right: -15px;
+  box-shadow: 0 0 50px #fff;
+}
+
+.bunny {
+  position: relative;
+  font-size: 7rem;
+  filter: drop-shadow(0 10px 10px #9298c555);
+  animation: bunnyHop 3s ease-in-out infinite;
+}
+
+@keyframes bunnyHop {
+  0%,100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+.art-caption {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #7776bd;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.floating {
+  position: absolute;
+  animation: float 4s ease-in-out infinite;
+  font-size: 2rem;
+}
+
+.f1 { top: 10%; left: 5%; }
+.f2 { bottom: 15%; right: 5%; animation-delay: 1s; }
+.f3 { top: 20%; right: 8%; animation-delay: 2s; }
+
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 6%;
+  scroll-margin-top: 70px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem,4vw,3rem);
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: #626987;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: auto;
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid #ffffffd9;
+  backdrop-filter: blur(16px);
+  border-radius: 25px;
+  padding: 28px;
+  box-shadow: 0 15px 45px #7d86c21c;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+}
+
+.story-grid h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.story-grid p {
+  line-height: 1.9;
+  color: #545c7d;
+  margin-bottom: 12px;
+}
+
+.fact {
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 16px;
+  background: #ffffffa8;
+}
+
+.fact strong {
+  display: block;
+  color: #8d79c8;
+  margin-bottom: 5px;
+}
+
+.warning {
+  font-size: .82rem;
+  color: #77718d;
+  margin-top: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 22px;
+}
+
+.character {
+  text-align: center;
+  transition: transform .35s;
+  overflow: hidden;
+}
+
+.character:hover { transform: translateY(-8px); }
+
+.character-visual {
+  min-height: 180px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg,#d9eaff,#f6d7ed,#e4dcff);
+}
+
+.character:nth-child(2) .character-visual {
+  background: linear-gradient(135deg,#f8d8e9,#e2dcff);
+}
+
+.character:nth-child(3) .character-visual {
+  background: linear-gradient(135deg,#ccecff,#ded6ff);
+}
+
+.character h3 { margin-bottom: 9px; }
+.character p { color: #626987; font-size: .91rem; line-height: 1.8; }
+
+.character a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #8376c9;
+  font-weight: 900;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.gallery-item {
+  min-height: 190px;
+  border-radius: 24px;
+  border: 2px solid white;
+  background: linear-gradient(135deg,#b8d7ff,#eac8f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.gallery-item:nth-child(2n) {
+  background: linear-gradient(135deg,#f8cde4,#c9d8ff);
+}
+
+.gallery-item:nth-child(3n) {
+  background: linear-gradient(135deg,#c5e8ff,#e1d0ff);
+}
+
+.gallery-item:hover { transform: scale(1.03); }
+
+.gallery-item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  font-size: .95rem;
+  font-weight: 900;
+  text-align: center;
+  background: #ffffffb9;
+  backdrop-filter: blur(10px);
+}
+
+.game-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 12px 18px;
+  background: #ffffffa8;
+  color: #7776bd;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.tab.active, .tab:hover {
+  color: white;
+  background: linear-gradient(90deg,#8eabf6,#d4a5e8);
+}
+
+.game-box {
+  max-width: 800px;
+  margin: auto;
+  min-height: 350px;
+}
+
+.game-box h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+
+.game-box p {
+  color: #5d6484;
+  line-height: 1.8;
+}
+
+#question {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 22px 0;
+  color: #414a70;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.answer {
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  background: #ffffff9c;
+  text-align: left;
+  cursor: pointer;
+  color: #454d70;
+  font-weight: 800;
+  transition: .25s;
+}
+
+.answer:hover {
+  background: #e4e7ff;
+  transform: translateY(-3px);
+}
+
+.answer:disabled { cursor: default; opacity: .8; }
+
+#feedback {
+  min-height: 30px;
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+.score {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #e6e7ff;
+  color: #7673be;
+  font-weight: 900;
+}
+
+.progress {
+  height: 9px;
+  background: #ffffffa8;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,#8caff7,#e0a4dd);
+  transition: width .4s;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.memory-card {
+  min-height: 85px;
+  border: 2px solid white;
+  border-radius: 18px;
+  background: linear-gradient(135deg,#c7ddff,#f4d7f0);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.memory-card:hover { transform: scale(1.04); }
+.memory-card.matched { background: #d6f5e9; cursor: default; }
+
+.timeline {
+  border-left: 3px solid #c4b7f3;
+  margin-left: 10px;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 27px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #b9b7f5;
+  left: -33px;
+  top: 4px;
+  border: 3px solid white;
+}
+
+.timeline-item h3 { margin-bottom: 7px; }
+.timeline-item p { color: #5c6484; line-height: 1.8; }
+
+footer {
+  text-align: center;
+  padding: 40px 6%;
+  background: #ffffff75;
+  border-top: 1px solid white;
+  color: #676e90;
+  line-height: 1.9;
+}
+
+footer strong { color: #8276c7; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: #ffffffd9;
+  color: #8276c7;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 99;
+  box-shadow: 0 5px 20px #7776bd30;
+}
+
+@media(max-width:850px) {
+  .hero-inner, .story-grid { grid-template-columns: 1fr; }
+  .hero { text-align: center; }
+  .hero p { margin: auto; }
+  .buttons { justify-content: center; }
+  .hero-art { min-height: 400px; }
+  .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media(max-width:560px) {
+  header { padding: 12px 4%; }
+  nav { align-items: flex-start; flex-direction: column; }
+  nav ul { gap: 10px 15px; }
+  nav a { font-size: .78rem; }
+  .hero { padding: 55px 5%; }
+  .hero-art { min-height: 350px; }
+  .art-card { height: 320px; }
+  section { padding: 60px 5%; }
+  .cards, .gallery-grid, .answers { grid-template-columns: 1fr; }
+  .memory-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .glass { padding: 21px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<header>
+<nav>
+  <a href="#inicio" class="logo">☾ AO BUTA CLUB</a>
+  <ul>
+    <li><a href="#historia">História</a></li>
+    <li><a href="#personagens">Personagens</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#jogos">Jogos</a></li>
+    <li><a href="#curiosidades">Curiosidades</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<div class="hero-inner">
+  <div class="reveal">
+    <span class="eyebrow">✧ UM UNIVERSO ENTRE SONHOS E REALIDADE ✧</span>
+    <h1>Rascal Does Not Dream of <span class="gradient-text">Bunny Girl Senpai</span></h1>
+    <p>
+      Um lugar para conhecer a história de Sakuta e Mai, explorar os mistérios
+      da Síndrome da Puberdade e descobrir por que algumas pessoas marcam
+      nossas vidas de um jeito inesquecível.
+    </p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="#historia">Explorar o universo ✦</a>
+      <a class="btn btn-secondary" href="#jogos">Jogar agora ♡</a>
+    </div>
+  </div>
+
+  <div class="hero-art reveal">
+    <div class="orbit"></div>
+    <span class="floating f1">✦</span>
+    <span class="floating f2">♡</span>
+    <span class="floating f3">☾</span>
+    <div class="art-card">
+      <div class="moon"></div>
+      <div class="bunny">🐰</div>
+      <div class="art-caption">DREAM WORLD<br>夢の世界</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="historia">
+<div class="section-heading reveal">
+  <h2>Por trás dos sonhos <span class="gradient-text">✧</span></h2>
+  <p>Uma história sobre adolescência, sentimentos, identidade e os mistérios que ninguém consegue explicar.</p>
+</div>
+
+<div class="story-grid">
+  <article class="glass reveal">
+    <h3>📖 Sobre o anime</h3>
+    <p>
+      <strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</strong>,
+      conhecido internacionalmente como <em>Rascal Does Not Dream of Bunny Girl Senpai</em>,
+      é uma série japonesa baseada nas light novels de Hajime Kamoshida,
+      com ilustrações de Keji Mizoguchi.
+    </p>
+    <p>
+      A história acompanha Sakuta Azusagawa, um estudante que conhece Mai
+      Sakurajima, uma atriz que está afastada da carreira. Um dia, ele a vê
+      em uma biblioteca usando uma fantasia de coelhinha. O mais estranho?
+      As outras pessoas parecem não notá-la.
+    </p>
+    <p>
+      Esse acontecimento leva Sakuta a investigar fenômenos misteriosos
+      ligados aos sentimentos, às inseguranças e às dificuldades enfrentadas
+      por adolescentes. Cada arco apresenta uma situação diferente e mostra
+      como as experiências pessoais podem afetar a maneira como alguém
+      se enxerga e se relaciona com os outros.
+    </p>
+    <p>
+      Mesmo com seus elementos sobrenaturais, a obra trata de questões
+      humanas: solidão, pressão social, amizades, família, amor e a vontade
+      de ser compreendido.
+    </p>
+  </article>
+
+  <aside class="glass reveal">
+    <h3>🌙 Ficha do anime</h3>
+    <div class="fact"><strong>Nome japonês</strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</div>
+    <div class="fact"><strong>Gêneros</strong>Romance, drama, sobrenatural</div>
+    <div class="fact"><strong>Obra original</strong>Light novel de Hajime Kamoshida</div>
+    <div class="fact"><strong>Estúdio da primeira temporada</strong>CloverWorks</div>
+    <div class="fact"><strong>Personagens centrais</strong>Sakuta Azusagawa e Mai Sakurajima</div>
+    <div class="fact"><strong>Tema marcante</strong>A chamada Síndrome da Puberdade</div>
+    <p class="warning">A ficha resume a obra; a franquia também inclui filmes e continuações.</p>
+  </aside>
+</div>
+</section>
+
+<section id="personagens">
+<div class="section-heading reveal">
+  <h2>Personagens principais ♡</h2>
+  <p>Conheça algumas das pessoas que fazem parte desse universo. Cada uma possui sua própria história.</p>
+</div>
+
+<div class="cards">
+  <article class="glass character reveal">
+    <div class="character-visual">🐰</div>
+    <h3>Mai Sakurajima</h3>
+    <p>Uma atriz conhecida que se afasta da vida pública. Inteligente, séria e determinada, Mai tenta lidar com a sensação de ser ignorada e com as expectativas colocadas sobre ela.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+
+  <article class="glass character reveal">
+    <div class="character-visual">🌌</div>
+    <h3>Sakuta Azusagawa</h3>
+    <p>Um estudante direto e observador que não tem medo de ajudar quem está passando por situações difíceis. Sua relação com Mai é um dos centros da história.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+
+  <article class="glass character reveal">
+    <div class="character-visual">💙</div>
+    <h3>Tomoe Koga</h3>
+    <p>Uma estudante que se preocupa bastante com a opinião das outras pessoas. Seu arco aborda amizades, pressão social e o desejo de ser aceita.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+
+  <article class="glass character reveal">
+    <div class="character-visual">🔬</div>
+    <h3>Rio Futaba</h3>
+    <p>Amiga de Sakuta e integrante do clube de ciências. Costuma tentar encontrar explicações racionais para os acontecimentos estranhos.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+
+  <article class="glass character reveal">
+    <div class="character-visual">🎤</div>
+    <h3>Nodoka Toyohama</h3>
+    <p>Integrante de um grupo de idols e meia-irmã de Mai. Sua história envolve comparações, identidade e a busca por seu próprio espaço.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+
+  <article class="glass character reveal">
+    <div class="character-visual">🌸</div>
+    <h3>Shoko Makinohara</h3>
+    <p>Uma personagem misteriosa que tem uma ligação importante com o passado de Sakuta. Sua presença influencia vários acontecimentos da narrativa.</p>
+    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
+  </article>
+</div>
+</section>
+
+<section id="galeria">
+<div class="section-heading reveal">
+  <h2>Dream Gallery ✧</h2>
+  <p>Uma galeria temática para entrar no clima do anime. Os cartões abaixo são ilustrações decorativas feitas com CSS e emojis; não são imagens oficiais dos personagens.</p>
+</div>
+
+<div class="gallery-grid reveal">
+  <div class="gallery-item">🌙<span>Noite dos sonhos</span></div>
+  <div class="gallery-item">🐰<span>Mistério da biblioteca</span></div>
+  <div class="gallery-item">🌊<span>Mar e lembranças</span></div>
+  <div class="gallery-item">💌<span>Cartas do coração</span></div>
+  <div class="gallery-item">✨<span>Estrelas e desejos</span></div>
+  <div class="gallery-item">💜<span>Um mundo de memórias</span></div>
+</div>
+</section>
+
+<section id="jogos">
+<div class="section-heading reveal">
+  <h2>Área de jogos 🎮</h2>
+  <p>Teste o que você sabe, acumule pontos e descubra se você é um verdadeiro fã de Bunny Girl Senpai!</p>
+</div>
+
+<div class="game-tabs">
+  <button class="tab active" onclick="showGame('quiz',this)">🧠 Quiz</button>
+  <button class="tab" onclick="showGame('truefalse',this)">✨ Verdadeiro ou falso</button>
+  <button class="tab" onclick="showGame('memory',this)">🃏 Jogo da memória</button>
+  <button class="tab" onclick="showGame('personality',this)">💗 Seu resultado</button>
+</div>
+
+<div id="quiz" class="game-box glass">
+  <h3>Quiz do universo</h3>
+  <p>Responda às perguntas e veja quantos pontos consegue conquistar.</p>
+  <div class="progress"><div id="progress-bar"></div></div>
+  <div class="score">Pontos: <span id="score">0</span></div>
+  <p id="question">Preparando a primeira pergunta...</p>
+  <div class="answers" id="answers"></div>
+  <p id="feedback" aria-live="polite"></p>
+  <button class="btn btn-primary" id="next" onclick="nextQuestion()">Próxima pergunta →</button>
+  <button class="btn btn-secondary" onclick="restartQuiz()">Recomeçar ↻</button>
+</div>
+
+<div id="truefalse" class="game-box glass" style="display:none">
+  <h3>Verdadeiro ou falso?</h3>
+  <p>Leia a frase e escolha sua resposta.</p>
+  <div class="progress"><div id="tf-progress" style="width:0"></div></div>
+  <div class="score">Pontos: <span id="tf-score">0</span></div>
+  <p id="tf-question" style="font-size:1.2rem;font-weight:900;margin:25px 0">Carregando...</p>
+  <div class="answers">
+    <button class="answer" onclick="answerTF(true)">✔ Verdadeiro</button>
+    <button class="answer" onclick="answerTF(false)">✘ Falso</button>
+  </div>
+  <p id="tf-feedback" aria-live="polite"></p>
+  <button class="btn btn-primary" onclick="nextTF()">Próxima →</button>
+  <button class="btn btn-secondary" onclick="restartTF()">Recomeçar ↻</button>
+</div>
+
+<div id="memory" class="game-box glass" style="display:none">
+  <h3>Jogo da memória</h3>
+  <p>Encontre os pares de símbolos. Você consegue completar todos?</p>
+  <p style="margin-top:10px">Movimentos: <strong id="moves">0</strong> · Pares: <strong id="pairs">0</strong>/6</p>
+  <div class="memory-grid" id="memory-grid"></div>
+  <p id="memory-feedback" aria-live="polite"></p>
+  <button class="btn btn-primary" onclick="startMemory()">Novo jogo ↻</button>
+</div>
+
+<div id="personality" class="game-box glass" style="display:none">
+  <h3>Qual é a sua energia?</h3>
+  <p>Escolha a alternativa que mais combina com você.</p>
+  <p id="personality-question" style="font-size:1.2rem;font-weight:900;margin:25px 0">Quando alguém precisa de ajuda, você...</p>
+  <div class="answers" id="personality-answers"></div>
+  <p id="personality-result" aria-live="polite"></p>
+  <button class="btn btn-secondary" onclick="startPersonality()">Fazer novamente ↻</button>
+</div>
+</section>
+
+<section id="curiosidades">
+<div class="section-heading reveal">
+  <h2>Curiosidades do universo 🌌</h2>
+  <p>Alguns detalhes que ajudam a entender a proposta da obra.</p>
+</div>
+
+<div class="glass reveal">
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>01 · A Síndrome da Puberdade</h3>
+      <p>É o nome dado aos fenômenos inexplicáveis que aparecem na história. Eles funcionam como uma representação sobrenatural de conflitos emocionais e sociais vividos pelos personagens.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>02 · Uma protagonista que ninguém vê</h3>
+      <p>O encontro de Sakuta com Mai na biblioteca estabelece o mistério inicial: por que uma pessoa tão conhecida parece desaparecer da percepção dos outros?</p>
+    </div>
+    <div class="timeline-item">
+      <h3>03 · Mais do que romance</h3>
+      <p>A relação entre Sakuta e Mai é importante, mas a obra também explora amizade, família, autoestima, luto, expectativas e a dificuldade de se comunicar.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>04 · A importância das conversas</h3>
+      <p>Em muitos arcos, ouvir com atenção e tentar compreender outra pessoa é tão importante quanto investigar o próprio fenômeno misterioso.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>05 · A franquia continua</h3>
+      <p>Além da primeira série de TV, a franquia tem filmes e outras adaptações. Consulte os canais oficiais para conferir a ordem e as novidades.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="glass reveal" style="text-align:center">
+  <h2 style="font-family:'Playfair Display',serif;margin-bottom:15px">“Cada sonho guarda uma história.”</h2>
+  <p style="line-height:1.9;color:#5d6484">Obrigado por visitar este pequeno universo inspirado em Bunny Girl Senpai.</p>
+  <div class="buttons" style="justify-content:center">
+    <a class="btn btn-primary" href="#inicio">Voltar ao começo ↑</a>
+    <a class="btn btn-secondary" href="https://rascaldoesnotdream.com/" target="_blank" rel="noopener">Site oficial ↗</a>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <strong>☾ AO BUTA CLUB</strong>
+  <p>Um site de fã criado para fins de estudo e entretenimento.</p>
+  <p>Não é afiliado aos criadores oficiais. Os direitos da obra pertencem aos seus respectivos titulares.</p>
+  <p>Feito com ♡, estrelas e sonhos.</p>
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
+
+<script>
+// ESTRELAS ANIMADAS
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let stars = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  stars = Array.from({length:90}, () => ({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2+0.4,
+    speed:Math.random()*0.35+0.08,
+    alpha:Math.random()
+  }));
+}
+
+function animateStars() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  stars.forEach(s => {
+    s.y -= s.speed;
+    if(s.y < 0) {
+      s.y = canvas.height;
+      s.x = Math.random()*canvas.width;
+    }
+    s.alpha += (Math.random()-.5)*.06;
+    s.alpha = Math.max(.2,Math.min(1,s.alpha));
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(animateStars);
+}
+
+resizeCanvas();
+animateStars();
+window.addEventListener("resize",resizeCanvas);
+
+// ANIMAÇÃO DE ENTRADA DAS SEÇÕES
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+// TROCA DE JOGOS
+function showGame(id,button) {
+  document.querySelectorAll(".game-box").forEach(box => box.style.display="none");
+  document.getElementById(id).style.display="block";
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+  button.classList.add("active");
+}
+
+// QUIZ
+const questions = [
+  {q:"Quem é a atriz que Sakuta encontra na biblioteca?",a:["Tomoe Koga","Mai Sakurajima","Rio Futaba","Nodoka Toyohama"],c:1,e:"Mai é a atriz que aparece com a fantasia de coelhinha."},
+  {q:"Qual é o nome do protagonista masculino?",a:["Sakuta Azusagawa","Keji Mizoguchi","Hajime Kamoshida","Yuma Kunimi"],c:0,e:"Sakuta é o estudante que investiga os fenômenos."},
+  {q:"Como são chamados os fenômenos misteriosos da obra?",a:["Síndrome do Sono","Síndrome da Puberdade","Efeito Lunar","Mistério Escolar"],c:1,e:"A Síndrome da Puberdade está no centro dos acontecimentos."},
+  {q:"Qual é o gênero que aparece junto ao romance?",a:["Faroeste","Sobrenatural","Esporte","Documentário"],c:1,e:"A história combina romance, drama e elementos sobrenaturais."},
+  {q:"Quem costuma buscar explicações científicas para os fenômenos?",a:["Rio Futaba","Mai Sakurajima","Shoko Makinohara","Nodoka Toyohama"],c:0,e:"Rio Futaba é conhecida por seu interesse científico."},
+  {q:"Qual estúdio produziu a primeira temporada do anime?",a:["Studio Ghibli","CloverWorks","MAPPA","Bones"],c:1,e:"A primeira temporada foi produzida pelo estúdio CloverWorks."},
+  {q:"Quem é a irmã mais nova de Sakuta?",a:["Tomoe","Kaede","Mai","Rio"],c:1,e:"Kaede é a irmã mais nova de Sakuta."},
+  {q:"Quem escreveu a light novel original?",a:["Hajime Kamoshida","Sakuta Azusagawa","Soichi Masui","Kaito Ishikawa"],c:0,e:"A obra original foi escrita por Hajime Kamoshida."}
+];
+
+let qIndex=0, score=0, answered=false;
+
+function renderQuestion() {
+  const q=questions[qIndex];
+  document.getElementById("question").textContent=q.q;
+  document.getElementById("score").textContent=score;
+  document.getElementById("feedback").textContent="";
+  document.getElementById("progress-bar").style.width=(qIndex/questions.length*100)+"%";
+  const box=document.getElementById("answers");
+  box.innerHTML="";
+  answered=false;
+  q.a.forEach((answer,i)=>{
+    const b=document.createElement("button");
+    b.className="answer";
+    b.textContent=answer;
+    b.onclick=()=>chooseAnswer(i,b);
+    box.appendChild(b);
+  });
+  document.getElementById("next").textContent=qIndex===questions.length-1?"Ver resultado ✨":"Próxima pergunta →";
+}
+
+function chooseAnswer(i,button) {
+  if(answered) return;
+  answered=true;
+  const q=questions[qIndex];
+  document.querySelectorAll("#answers .answer").forEach(b=>b.disabled=true);
+  if(i===q.c) {
+    score++;
+    document.getElementById("feedback").textContent="✨ Correto! "+q.e;
+  } else {
+    document.getElementById("feedback").textContent="🌙 Ainda não! "+q.e;
+  }
+  document.getElementById("score").textContent=score;
+  button.style.background=i===q.c?"#d6f5e9":"#f9dce9";
+  document.getElementById("progress-bar").style.width=((qIndex+1)/questions.length*100)+"%";
+}
+
+function nextQuestion() {
+  if(!answered) {
+    document.getElementById("feedback").textContent="Escolha uma resposta primeiro! 💗";
+    return;
+  }
+  if(qIndex<questions.length-1) {
+    qIndex++;
+    renderQuestion();
+  } else {
+    document.getElementById("question").textContent="Você fez "+score+" de "+questions.length+" pontos!";
+    document.getElementById("answers").innerHTML="";
+    document.getElementById("feedback").textContent=score===questions.length
+      ?"PERFEITO! Você conhece muito bem o universo de AoButa! 🌟"
+      :score>=5
+      ?"Muito bom! Você já conhece bastante do anime. 💗"
+      :"Continue explorando o universo e tente novamente! 🌙";
+    document.getElementById("next").textContent="Jogar novamente ↻";
+    document.getElementById("next").onclick=restartQuiz;
+  }
+}
+
+function restartQuiz() {
+  qIndex=0; score=0;
+  document.getElementById("next").onclick=nextQuestion;
+  renderQuestion();
+}
+
+renderQuestion();
+
+// VERDADEIRO OU FALSO
+const tfQuestions=[
+  {q:"Mai Sakurajima é uma atriz.",a:true,e:"Mai é uma atriz que está afastada da carreira no início da história."},
+  {q:"Sakuta é o nome da irmã de Mai.",a:false,e:"Sakuta é o protagonista; sua irmã mais nova se chama Kaede."},
+  {q:"Rio Futaba é amiga de Sakuta.",a:true,e:"Rio é uma das amigas de Sakuta e ajuda a pensar sobre os mistérios."},
+  {q:"A obra mistura romance e elementos sobrenaturais.",a:true,e:"Esses são dois elementos importantes do anime."},
+  {q:"A história original é uma light novel.",a:true,e:"A série foi adaptada de light novels escritas por Hajime Kamoshida."},
+  {q:"Tomoe Koga é uma professora adulta.",a:false,e:"Tomoe é uma estudante do ensino médio."}
+];
+
+let tfIndex=0,tfScore=0,tfAnswered=false;
+
+function renderTF() {
+  tfAnswered=false;
+  if(tfIndex>=tfQuestions.length) {
+    document.getElementById("tf-question").textContent="Fim do jogo! Você fez "+tfScore+" de "+tfQuestions.length+" pontos.";
+    document.getElementById("tf-feedback").textContent="Jogue novamente para tentar melhorar sua pontuação! ✨";
+    document.getElementById("tf-progress").style.width="100%";
+    return;
+  }
+  document.getElementById("tf-question").textContent=tfQuestions[tfIndex].q;
+  document.getElementById("tf-score").textContent=tfScore;
+  document.getElementById("tf-feedback").textContent="";
+  document.getElementById("tf-progress").style.width=(tfIndex/tfQuestions.length*100)+"%";
+}
+
+function answerTF(value) {
+  if(tfAnswered || tfIndex>=tfQuestions.length) return;
+  tfAnswered=true;
+  const q=tfQuestions[tfIndex];
+  if(value===q.a) {
+    tfScore++;
+    document.getElementById("tf-feedback").textContent="✨ Acertou! "+q.e;
+  } else {
+    document.getElementById("tf-feedback").textContent="🌙 Não foi dessa vez. "+q.e;
+  }
+  document.getElementById("tf-score").textContent=tfScore;
+  document.getElementById("tf-progress").style.width=((tfIndex+1)/tfQuestions.length*100)+"%";
+}
+
+function nextTF() {
+  if(tfIndex<tfQuestions.length) {
+    if(!tfAnswered) {
+      document.getElementById("tf-feedback").textContent="Escolha verdadeiro ou falso primeiro! 💗";
+      return;
+    }
+    tfIndex++;
+    renderTF();
+  } else {
+    restartTF();
+  }
+}
+
+function restartTF() {
+  tfIndex=0; tfScore=0;
+  renderTF();
+}
+
+renderTF();
+
+// JOGO DA MEMÓRIA
+const symbols=["🌙","🐰","💗","🌊","✨","💜"];
+let firstCard=null, lockBoard=false, matched=0, moves=0;
+
+function startMemory() {
+  firstCard=null; lockBoard=false; matched=0; moves=0;
+  document.getElementById("moves").textContent=moves;
+  document.getElementById("pairs").textContent=matched;
+  document.getElementById("memory-feedback").textContent="";
+  const deck=[...symbols,...symbols].sort(()=>Math.random()-.5);
+  const grid=document.getElementById("memory-grid");
+  grid.innerHTML="";
+  deck.forEach(symbol=>{
+    const card=document.createElement("button");
+    card.className="memory-card";
+    card.textContent="✦";
+    card.setAttribute("aria-label","Carta fechada");
+    card.dataset.symbol=symbol;
+    card.onclick=()=>flipCard(card);
+    grid.appendChild(card);
+  });
+}
+
+function flipCard(card) {
+  if(lockBoard || card.classList.contains("matched") || card===firstCard || card.textContent!=="✦") return;
+  card.textContent=card.dataset.symbol;
+  card.setAttribute("aria-label",card.dataset.symbol);
+  if(!firstCard) {
+    firstCard=card;
+    return;
+  }
+  moves++;
+  document.getElementById("moves").textContent=moves;
+  if(firstCard.dataset.symbol===card.dataset.symbol) {
+    firstCard.classList.add("matched");
+    card.classList.add("matched");
+    firstCard=null;
+    matched++;
+    document.getElementById("pairs").textContent=matched;
+    if(matched===symbols.length) {
+      document.getElementById("memory-feedback").textContent="Parabéns! Você encontrou todos os pares! 🌟";
+    }
+  } else {
+    lockBoard=true;
+    const previous=firstCard;
+    firstCard=null;
+    setTimeout(()=>{
+      previous.textContent="✦";
+      card.textContent="✦";
+      previous.setAttribute("aria-label","Carta fechada");
+      card.setAttribute("aria-label","Carta fechada");
+      lockBoard=false;
+    },800);
+  }
+}
+
+startMemory();
+
+// TESTE DE PERSONALIDADE
+const personalityQuestions=[
+  {q:"Quando alguém precisa de ajuda, você...",a:[
+    ["Tento ajudar mesmo que seja difícil","sakuta"],
+    ["Escuto e tento entender","mai"],
+    ["Procuro uma solução lógica","rio"],
+    ["Tento animar a pessoa","tomoe"]
+  ]},
+  {q:"Qual cenário você escolheria?",a:[
+    ["Uma praia ao pôr do sol","sakuta"],
+    ["Uma biblioteca tranquila","mai"],
+    ["Um laboratório cheio de ideias","rio"],
+    ["Um passeio com os amigos","tomoe"]
+  ]},
+  {q:"O que é mais importante para você?",a:[
+    ["Lealdade","sakuta"],
+    ["Ser compreendido","mai"],
+    ["Conhecimento","rio"],
+    ["Pertencer a um grupo","tomoe"]
+  ]}
+];
+
+let pIndex=0, pScores={sakuta:0,mai:0,rio:0,tomoe:0};
+
+function startPersonality() {
+  pIndex=0;
+  pScores={sakuta:0,mai:0,rio:0,tomoe:0};
+  renderPersonality();
+}
+
+function renderPersonality() {
+  document.getElementById("personality-result").textContent="";
+  if(pIndex>=personalityQuestions.length) {
+    const best=Object.keys(pScores).sort((a,b)=>pScores[b]-pScores[a])[0];
+    const results={
+      sakuta:"🌌 Sua energia é Sakuta! Você valoriza lealdade, coragem e ajudar quem precisa.",
+      mai:"🐰 Sua energia é Mai! Você é determinado, valoriza sinceridade e quer ser compreendido.",
+      rio:"🔬 Sua energia é Rio! Você é curioso, analítico e gosta de entender como as coisas funcionam.",
+      tomoe:"💙 Sua energia é Tomoe! Você valoriza amizade, conexão e os momentos compartilhados."
+    };
+    document.getElementById("personality-question").textContent="Seu resultado:";
+    document.getElementById("personality-answers").innerHTML="";
+    document.getElementById("personality-result").textContent=results[best];
+    return;
+  }
+  const q=personalityQuestions[pIndex];
+  document.getElementById("personality-question").textContent=q.q;
+  const box=document.getElementById("personality-answers");
+  box.innerHTML="";
+  q.a.forEach(([label,type])=>{
+    const b=document.createElement("button");
+    b.className="answer";
+    b.textContent=label;
+    b.onclick=()=>{
+      pScores[type]++;
+      pIndex++;
+      renderPersonality();
+    };
+    box.appendChild(b);
+  });
+}
+
+startPersonality();
+</script>
+
+</body>
+</html>
