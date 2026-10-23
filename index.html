@@ -1,48 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bunny Girl Senpai | Dream World</title>
+<title>AO BUTA ✦ Dream Universe</title>
+<meta name="description" content="Um universo de fã de Bunny Girl Senpai, com personagens, curiosidades, quizzes e jogos.">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
 
 :root {
-  --blue: #9bcaff;
-  --pink: #ffc8e2;
-  --purple: #c9b7ff;
-  --white: #ffffff;
-  --dark: #252b49;
-  --glass: rgba(255,255,255,.58);
+  --bg: #100d20;
+  --panel: #1c1733;
+  --purple: #a78bfa;
+  --pink: #f3a8d8;
+  --blue: #8bbcff;
+  --text: #f5efff;
+  --muted: #b9b0d4;
+  --line: #ffffff20;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: var(--dark);
-  background: linear-gradient(135deg,#d8eaff,#fce2f1,#e5ddff,#d8f1ff);
-  background-size: 300% 300%;
-  animation: sky 15s ease infinite;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 15% 15%, #33204f 0, transparent 38%),
+    radial-gradient(ellipse at 85% 40%, #142d53 0, transparent 38%),
+    radial-gradient(ellipse at 50% 90%, #35182f 0, transparent 35%),
+    var(--bg);
   overflow-x: hidden;
 }
 
-@keyframes sky {
-  0%,100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
 a { color: inherit; text-decoration: none; }
+button { font: inherit; }
 
-button { font-family: inherit; }
-
-#stars {
+#universe {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -54,379 +51,383 @@ button { font-family: inherit; }
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 14px 6%;
-  background: rgba(255,255,255,.72);
+  z-index: 50;
+  background: #100d20db;
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid #ffffffaa;
+  border-bottom: 1px solid var(--line);
 }
 
 nav {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
+  padding: 17px 5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
 }
 
 .logo {
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: #7378c9;
+  font-family: Cinzel, serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--pink);
+  letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 17px;
-  align-items: center;
+  gap: 20px;
 }
 
-nav a {
+nav a:not(.logo) {
   font-size: .85rem;
-  font-weight: 800;
+  color: var(--muted);
   transition: .3s;
 }
 
-nav a:hover { color: #b17bd8; }
+nav a:hover { color: var(--pink); }
 
 .hero {
   min-height: 88vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 70px 7%;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: 1150px;
+  max-width: 1250px;
+  margin: auto;
+  padding: 100px 6%;
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.15fr .85fr;
   align-items: center;
-  gap: 45px;
+  gap: 40px;
+  position: relative;
 }
 
 .eyebrow {
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 30px;
-  background: #ffffffa6;
-  border: 1px solid white;
-  color: #7972bd;
-  font-size: .8rem;
+  color: var(--pink);
+  font-size: .75rem;
   font-weight: 900;
-  margin-bottom: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.6rem,6vw,5.4rem);
-  line-height: 1.05;
-  margin-bottom: 20px;
+  font-family: Cinzel, serif;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.12;
+  margin: 23px 0;
 }
 
-.gradient-text {
-  background: linear-gradient(90deg,#798be5,#c579c8,#e9a2c9);
-  color: transparent;
+.gradient {
+  background: linear-gradient(100deg, #c6b4ff, #f5a9d8, #94c8ff);
   background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero p {
-  line-height: 1.9;
-  font-size: 1.02rem;
-  max-width: 560px;
-  color: #535b7d;
+  max-width: 570px;
+  color: var(--muted);
+  line-height: 1.95;
 }
 
-.buttons {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .btn {
-  display: inline-block;
-  border: none;
-  border-radius: 30px;
-  padding: 13px 22px;
+  border: 1px solid var(--line);
+  padding: 13px 21px;
+  border-radius: 9px;
   cursor: pointer;
+  display: inline-block;
   font-weight: 900;
-  transition: transform .3s, box-shadow .3s;
+  transition: .3s;
 }
 
 .btn:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 10px 25px #9a9de955;
+  transform: translateY(-4px);
+  box-shadow: 0 0 28px #ac8bfa30;
 }
 
-.btn-primary {
-  background: linear-gradient(100deg,#9baef8,#d6a7eb);
+.primary {
+  background: linear-gradient(100deg, #8062cb, #bd72ad);
   color: white;
+  border: none;
 }
 
-.btn-secondary {
-  background: #ffffffb8;
-  border: 1px solid white;
-  color: #7776bd;
-}
+.secondary { background: #ffffff08; color: var(--text); }
 
 .hero-art {
-  min-height: 440px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 410px;
+  display: grid;
+  place-items: center;
   position: relative;
+}
+
+.moon {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(135deg, #e9ddff, #a6baff 60%, #a886d9);
+  box-shadow: 0 0 40px #a58aff55, 0 0 120px #8f75ff25;
+  animation: moonFloat 6s ease-in-out infinite;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: -18px;
+  left: 28px;
+  background: #19132d;
+}
+
+@keyframes moonFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-17px); }
 }
 
 .orbit {
   position: absolute;
-  width: min(380px,90vw);
-  aspect-ratio: 1;
-  border: 2px solid #ffffffa8;
+  width: 340px;
+  height: 340px;
+  border: 1px solid #c5b6ff40;
   border-radius: 50%;
-  animation: rotate 25s linear infinite;
+  animation: spin 30s linear infinite;
 }
 
 .orbit::before, .orbit::after {
   content: "✦";
   position: absolute;
-  color: white;
-  font-size: 2rem;
-  text-shadow: 0 0 18px #a9a8ff;
+  color: var(--pink);
+  font-size: 1.7rem;
 }
 
-.orbit::before { top: 12%; left: 15%; }
-.orbit::after { bottom: 12%; right: 10%; }
+.orbit::before { top: 18px; left: 80px; }
+.orbit::after { bottom: 40px; right: 22px; }
 
-@keyframes rotate { to { transform: rotate(360deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-.art-card {
-  width: min(310px,75vw);
-  height: 390px;
-  position: relative;
-  border-radius: 48% 48% 30px 30px;
-  background: linear-gradient(160deg,#d6e7ff,#f5d5ed,#d9d2ff);
-  border: 5px solid #ffffffc9;
-  box-shadow: 0 25px 70px #8c8ecb44;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
-  animation: float 5s ease-in-out infinite;
+.hero-symbol {
+  z-index: 2;
+  font-size: 5rem;
+  color: #fff1ff;
+  text-shadow: 0 0 30px #f3a8d8, 0 0 80px #a78bfa;
+  animation: symbolGlow 3s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-16px); }
-}
-
-.moon {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: #ffffffad;
-  top: 35px;
-  right: -15px;
-  box-shadow: 0 0 50px #fff;
-}
-
-.bunny {
-  position: relative;
-  font-size: 7rem;
-  filter: drop-shadow(0 10px 10px #9298c555);
-  animation: bunnyHop 3s ease-in-out infinite;
-}
-
-@keyframes bunnyHop {
-  0%,100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-12px) rotate(4deg); }
-}
-
-.art-caption {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 900;
-  color: #7776bd;
-  text-align: center;
-  padding: 0 15px;
+@keyframes symbolGlow {
+  0%,100% { transform: scale(1); opacity: .8; }
+  50% { transform: scale(1.12); opacity: 1; }
 }
 
 .floating {
   position: absolute;
-  animation: float 4s ease-in-out infinite;
-  font-size: 2rem;
+  color: white;
+  animation: drift 5s ease-in-out infinite;
+  text-shadow: 0 0 18px var(--purple);
 }
 
-.f1 { top: 10%; left: 5%; }
-.f2 { bottom: 15%; right: 5%; animation-delay: 1s; }
-.f3 { top: 20%; right: 8%; animation-delay: 2s; }
+.f1 { top: 15%; left: 7%; font-size: 1.6rem; }
+.f2 { bottom: 16%; right: 5%; font-size: 2rem; animation-delay: 1s; }
+.f3 { top: 18%; right: 8%; font-size: 1rem; animation-delay: 2s; }
+
+@keyframes drift {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+}
 
 section {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
   padding: 80px 6%;
-  scroll-margin-top: 70px;
 }
 
-.section-heading {
-  text-align: center;
-  margin-bottom: 38px;
+.heading { text-align: center; margin-bottom: 40px; }
+
+.heading small {
+  color: var(--pink);
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-.section-heading h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem,4vw,3rem);
-  margin-bottom: 12px;
+.heading h2 {
+  font-family: Cinzel, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 15px 0;
 }
 
-.section-heading p {
-  color: #626987;
+.heading p {
+  color: var(--muted);
   line-height: 1.8;
-  max-width: 700px;
+  max-width: 680px;
   margin: auto;
 }
 
-.glass {
-  background: var(--glass);
-  border: 1px solid #ffffffd9;
-  backdrop-filter: blur(16px);
-  border-radius: 25px;
+.panel {
+  background: linear-gradient(135deg, #211936eF, #171c35eF);
+  border: 1px solid var(--line);
+  border-radius: 17px;
   padding: 28px;
-  box-shadow: 0 15px 45px #7d86c21c;
+  box-shadow: 0 15px 60px #00000015;
+  transition: border-color .3s, transform .3s;
 }
 
-.story-grid {
+.panel:hover { border-color: #c7a5ff60; }
+
+.story {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 22px;
 }
 
-.story-grid h3 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
+.panel h3 { margin-bottom: 15px; color: #e7d5ff; }
 
-.story-grid p {
+.panel p {
+  color: var(--muted);
   line-height: 1.9;
-  color: #545c7d;
   margin-bottom: 12px;
 }
 
 .fact {
-  margin: 12px 0;
-  padding: 15px;
-  border-radius: 16px;
-  background: #ffffffa8;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .fact strong {
   display: block;
-  color: #8d79c8;
-  margin-bottom: 5px;
-}
-
-.warning {
-  font-size: .82rem;
-  color: #77718d;
-  margin-top: 12px;
+  color: var(--pink);
+  margin-bottom: 3px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 22px;
-}
-
-.character {
-  text-align: center;
-  transition: transform .35s;
-  overflow: hidden;
-}
-
-.character:hover { transform: translateY(-8px); }
-
-.character-visual {
-  min-height: 180px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  margin-bottom: 18px;
-  background: linear-gradient(135deg,#d9eaff,#f6d7ed,#e4dcff);
-}
-
-.character:nth-child(2) .character-visual {
-  background: linear-gradient(135deg,#f8d8e9,#e2dcff);
-}
-
-.character:nth-child(3) .character-visual {
-  background: linear-gradient(135deg,#ccecff,#ded6ff);
-}
-
-.character h3 { margin-bottom: 9px; }
-.character p { color: #626987; font-size: .91rem; line-height: 1.8; }
-
-.character a {
-  display: inline-block;
-  margin-top: 15px;
-  color: #8376c9;
-  font-weight: 900;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 18px;
 }
 
-.gallery-item {
-  min-height: 190px;
-  border-radius: 24px;
-  border: 2px solid white;
-  background: linear-gradient(135deg,#b8d7ff,#eac8f1);
+.character {
+  position: relative;
+  overflow: hidden;
+}
+
+.character::before {
+  content: "✧";
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: var(--pink);
+  opacity: .65;
+}
+
+.character-symbol {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  font-family: Cinzel, serif;
+  font-size: 3.5rem;
+  color: #c7a7ff;
+  text-shadow: 0 0 30px #aa8dff60;
+}
+
+.character:nth-child(3n+2) .character-symbol {
+  color: var(--pink);
+  text-shadow: 0 0 30px #f3a8d850;
+}
+
+.character:nth-child(3n) .character-symbol {
+  color: var(--blue);
+  text-shadow: 0 0 30px #8bbcff50;
+}
+
+.character h3 { font-size: 1.2rem; }
+.character .role { color: var(--pink); font-size: .8rem; font-weight: 900; }
+.character p { font-size: .9rem; margin-top: 10px; }
+
+.tag {
+  display: inline-block;
+  margin-top: 9px;
+  margin-right: 5px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-size: .72rem;
+  color: #d6c7f8;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+}
+
+.scene {
+  min-height: 185px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
   position: relative;
   overflow: hidden;
+  border: 1px solid #ffffff25;
+  border-radius: 15px;
+  background: radial-gradient(circle at 50% 40%, #59447f, #1a1938 70%);
   transition: .4s;
 }
 
-.gallery-item:nth-child(2n) {
-  background: linear-gradient(135deg,#f8cde4,#c9d8ff);
+.scene:nth-child(2n) {
+  background: radial-gradient(circle at 50% 40%, #694264, #171b37 70%);
 }
 
-.gallery-item:nth-child(3n) {
-  background: linear-gradient(135deg,#c5e8ff,#e1d0ff);
+.scene:nth-child(3n) {
+  background: radial-gradient(circle at 50% 40%, #31547d, #17152f 70%);
 }
 
-.gallery-item:hover { transform: scale(1.03); }
+.scene:hover { transform: translateY(-5px); }
 
-.gallery-item span {
+.scene::before {
+  content: "✦     ·      ✧       ·     ✦";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff88;
+  letter-spacing: 8px;
+}
+
+.scene .symbol {
+  font-size: 3rem;
+  color: #fff0ff;
+  text-shadow: 0 0 35px #d1b4ff;
+  transition: .4s;
+}
+
+.scene:hover .symbol { transform: scale(1.2) rotate(8deg); }
+
+.scene span {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 12px;
-  font-size: .95rem;
-  font-weight: 900;
+  padding: 13px;
   text-align: center;
-  background: #ffffffb9;
-  backdrop-filter: blur(10px);
+  background: #100d20c9;
+  color: #f2dfff;
+  font-weight: 800;
 }
 
-.game-tabs {
+.tabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -435,221 +436,195 @@ section {
 }
 
 .tab {
-  border: 1px solid white;
-  border-radius: 30px;
-  padding: 12px 18px;
-  background: #ffffffa8;
-  color: #7776bd;
-  font-weight: 900;
+  border: 1px solid var(--line);
+  background: #ffffff08;
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 12px 15px;
   cursor: pointer;
   transition: .3s;
 }
 
-.tab.active, .tab:hover {
+.tab:hover, .tab.active {
+  background: #8062cb;
   color: white;
-  background: linear-gradient(90deg,#8eabf6,#d4a5e8);
 }
 
-.game-box {
-  max-width: 800px;
-  margin: auto;
-  min-height: 350px;
-}
+.game { max-width: 820px; margin: auto; }
+.game h3 { font-size: 1.4rem; }
 
-.game-box h3 {
-  font-size: 1.45rem;
-  margin-bottom: 12px;
-}
-
-.game-box p {
-  color: #5d6484;
-  line-height: 1.8;
-}
-
-#question {
-  font-size: 1.2rem;
+#question, #tf-question, #p-question {
+  color: var(--text);
+  font-size: 1.15rem;
   font-weight: 900;
-  margin: 22px 0;
-  color: #414a70;
+  line-height: 1.7;
+  margin: 24px 0;
 }
 
 .answers {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 12px;
-  margin: 18px 0;
+  margin: 20px 0;
 }
 
 .answer {
-  border: 2px solid #ffffff;
-  border-radius: 16px;
-  padding: 15px;
-  background: #ffffff9c;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff08;
+  color: var(--text);
   text-align: left;
   cursor: pointer;
-  color: #454d70;
-  font-weight: 800;
   transition: .25s;
 }
 
-.answer:hover {
-  background: #e4e7ff;
-  transform: translateY(-3px);
-}
-
+.answer:hover { border-color: var(--purple); background: #a78bfa18; }
 .answer:disabled { cursor: default; opacity: .8; }
 
-#feedback {
-  min-height: 30px;
-  font-weight: 900;
-  margin: 12px 0;
-}
-
-.score {
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: #e6e7ff;
-  color: #7673be;
-  font-weight: 900;
-}
+.score { color: var(--pink); font-weight: 900; }
 
 .progress {
-  height: 9px;
-  background: #ffffffa8;
-  border-radius: 20px;
+  width: 100%;
+  height: 6px;
+  background: #ffffff12;
+  border-radius: 10px;
+  margin: 17px 0;
   overflow: hidden;
-  margin: 15px 0;
 }
 
-#progress-bar {
+.progress div {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg,#8caff7,#e0a4dd);
+  background: linear-gradient(90deg, var(--purple), var(--pink));
   transition: width .4s;
 }
 
-.memory-grid {
+.feedback { min-height: 35px; color: var(--pink); line-height: 1.8; }
+
+.memory {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
-  gap: 12px;
-  margin-top: 20px;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.memory-card {
-  min-height: 85px;
-  border: 2px solid white;
-  border-radius: 18px;
-  background: linear-gradient(135deg,#c7ddff,#f4d7f0);
-  font-size: 2rem;
+.memory button {
+  min-height: 75px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(135deg,#30264b,#202746);
+  color: white;
+  font-size: 1.8rem;
   cursor: pointer;
   transition: .3s;
 }
 
-.memory-card:hover { transform: scale(1.04); }
-.memory-card.matched { background: #d6f5e9; cursor: default; }
+.memory button:hover { border-color: var(--pink); }
+.memory button.matched { background: #244c4b; }
 
 .timeline {
-  border-left: 3px solid #c4b7f3;
-  margin-left: 10px;
+  border-left: 1px solid #ac8bfa;
   padding-left: 25px;
+  margin-left: 8px;
 }
 
-.timeline-item {
+.timeline article {
   position: relative;
-  padding: 0 0 27px;
+  padding-bottom: 25px;
 }
 
-.timeline-item::before {
+.timeline article::before {
   content: "";
-  position: absolute;
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #b9b7f5;
-  left: -33px;
-  top: 4px;
-  border: 3px solid white;
+  background: var(--pink);
+  position: absolute;
+  left: -31px;
+  top: 5px;
+  box-shadow: 0 0 15px var(--pink);
 }
 
-.timeline-item h3 { margin-bottom: 7px; }
-.timeline-item p { color: #5c6484; line-height: 1.8; }
+.timeline h3 { color: #e9d5ff; margin-bottom: 8px; }
+.timeline p { color: var(--muted); line-height: 1.8; }
 
 footer {
+  padding: 45px 6%;
   text-align: center;
-  padding: 40px 6%;
-  background: #ffffff75;
-  border-top: 1px solid white;
-  color: #676e90;
-  line-height: 1.9;
+  background: #0b0916;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 2;
+  font-size: .85rem;
 }
 
-footer strong { color: #8276c7; }
+footer strong { color: var(--pink); letter-spacing: 2px; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(24px);
   transition: opacity .8s, transform .8s;
 }
 
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-#topBtn {
+#top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 48px;
-  height: 48px;
-  border: 1px solid white;
+  z-index: 40;
+  border: 1px solid var(--line);
+  background: #211936;
+  color: var(--pink);
+  padding: 13px 17px;
   border-radius: 50%;
-  background: #ffffffd9;
-  color: #8276c7;
-  font-size: 1.3rem;
   cursor: pointer;
-  z-index: 99;
-  box-shadow: 0 5px 20px #7776bd30;
 }
 
 @media(max-width:850px) {
-  .hero-inner, .story-grid { grid-template-columns: 1fr; }
-  .hero { text-align: center; }
+  nav { align-items: flex-start; flex-direction: column; }
+  nav ul { gap: 12px; }
+  .hero { grid-template-columns: 1fr; text-align: center; padding-top: 70px; }
   .hero p { margin: auto; }
-  .buttons { justify-content: center; }
-  .hero-art { min-height: 400px; }
+  .actions { justify-content: center; }
+  .hero-art { min-height: 340px; }
+  .story { grid-template-columns: 1fr; }
   .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 
 @media(max-width:560px) {
-  header { padding: 12px 4%; }
-  nav { align-items: flex-start; flex-direction: column; }
-  nav ul { gap: 10px 15px; }
-  nav a { font-size: .78rem; }
-  .hero { padding: 55px 5%; }
-  .hero-art { min-height: 350px; }
-  .art-card { height: 320px; }
+  .cards, .gallery, .answers { grid-template-columns: 1fr; }
+  .memory { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .hero { padding-left: 5%; padding-right: 5%; }
   section { padding: 60px 5%; }
-  .cards, .gallery-grid, .answers { grid-template-columns: 1fr; }
-  .memory-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-  .glass { padding: 21px; }
+  .panel { padding: 21px; }
+  nav ul { gap: 10px 15px; }
+  nav a:not(.logo) { font-size: .78rem; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="stars"></canvas>
+<canvas id="universe"></canvas>
 
 <header>
 <nav>
-  <a href="#inicio" class="logo">☾ AO BUTA CLUB</a>
+  <a class="logo" href="#inicio">✦ AO BUTA</a>
   <ul>
     <li><a href="#historia">História</a></li>
     <li><a href="#personagens">Personagens</a></li>
-    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#galeria">Universo</a></li>
     <li><a href="#jogos">Jogos</a></li>
     <li><a href="#curiosidades">Curiosidades</a></li>
   </ul>
@@ -659,575 +634,575 @@ footer strong { color: #8276c7; }
 <main>
 
 <section class="hero" id="inicio">
-<div class="hero-inner">
   <div class="reveal">
-    <span class="eyebrow">✧ UM UNIVERSO ENTRE SONHOS E REALIDADE ✧</span>
-    <h1>Rascal Does Not Dream of <span class="gradient-text">Bunny Girl Senpai</span></h1>
+    <span class="eyebrow">✦ Welcome to the dream universe ✦</span>
+    <h1>Rascal Does Not Dream of <span class="gradient">Bunny Girl Senpai</span></h1>
     <p>
-      Um lugar para conhecer a história de Sakuta e Mai, explorar os mistérios
-      da Síndrome da Puberdade e descobrir por que algumas pessoas marcam
-      nossas vidas de um jeito inesquecível.
+      Entre o céu noturno e os mistérios da adolescência, existe um universo
+      onde sentimentos ganham formas inesperadas. Explore as histórias,
+      conheça os personagens e descubra os segredos de AoButa.
     </p>
-    <div class="buttons">
-      <a class="btn btn-primary" href="#historia">Explorar o universo ✦</a>
-      <a class="btn btn-secondary" href="#jogos">Jogar agora ♡</a>
+    <div class="actions">
+      <a class="btn primary" href="#historia">Entrar no universo ✧</a>
+      <a class="btn secondary" href="#jogos">Desafiar meu conhecimento ♡</a>
     </div>
   </div>
 
   <div class="hero-art reveal">
     <div class="orbit"></div>
+    <div class="moon"></div>
+    <div class="hero-symbol">✧</div>
     <span class="floating f1">✦</span>
-    <span class="floating f2">♡</span>
-    <span class="floating f3">☾</span>
-    <div class="art-card">
-      <div class="moon"></div>
-      <div class="bunny">🐰</div>
-      <div class="art-caption">DREAM WORLD<br>夢の世界</div>
-    </div>
+    <span class="floating f2">☾</span>
+    <span class="floating f3">♡</span>
   </div>
-</div>
 </section>
 
 <section id="historia">
-<div class="section-heading reveal">
-  <h2>Por trás dos sonhos <span class="gradient-text">✧</span></h2>
-  <p>Uma história sobre adolescência, sentimentos, identidade e os mistérios que ninguém consegue explicar.</p>
-</div>
+  <div class="heading reveal">
+    <small>the story</small>
+    <h2>Mais que um sonho <span class="gradient">✦</span></h2>
+    <p>Romance, mistério e sentimentos que desafiam a realidade.</p>
+  </div>
 
-<div class="story-grid">
-  <article class="glass reveal">
-    <h3>📖 Sobre o anime</h3>
-    <p>
-      <strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</strong>,
-      conhecido internacionalmente como <em>Rascal Does Not Dream of Bunny Girl Senpai</em>,
-      é uma série japonesa baseada nas light novels de Hajime Kamoshida,
-      com ilustrações de Keji Mizoguchi.
-    </p>
-    <p>
-      A história acompanha Sakuta Azusagawa, um estudante que conhece Mai
-      Sakurajima, uma atriz que está afastada da carreira. Um dia, ele a vê
-      em uma biblioteca usando uma fantasia de coelhinha. O mais estranho?
-      As outras pessoas parecem não notá-la.
-    </p>
-    <p>
-      Esse acontecimento leva Sakuta a investigar fenômenos misteriosos
-      ligados aos sentimentos, às inseguranças e às dificuldades enfrentadas
-      por adolescentes. Cada arco apresenta uma situação diferente e mostra
-      como as experiências pessoais podem afetar a maneira como alguém
-      se enxerga e se relaciona com os outros.
-    </p>
-    <p>
-      Mesmo com seus elementos sobrenaturais, a obra trata de questões
-      humanas: solidão, pressão social, amizades, família, amor e a vontade
-      de ser compreendido.
-    </p>
-  </article>
+  <div class="story">
+    <article class="panel reveal">
+      <h3>📖 Sobre a história</h3>
+      <p>
+        <strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</strong>,
+        conhecido como Bunny Girl Senpai, é um anime baseado na light novel
+        escrita por Hajime Kamoshida e ilustrada por Keji Mizoguchi.
+      </p>
+      <p>
+        A trama acompanha Sakuta Azusagawa, um estudante que conhece Mai
+        Sakurajima, uma atriz que se afastou da vida pública. Em uma biblioteca,
+        Sakuta percebe que Mai está vestida de coelhinha — e que as outras
+        pessoas parecem não notar sua presença.
+      </p>
+      <p>
+        A partir desse encontro, ele começa a investigar acontecimentos
+        inexplicáveis ligados à chamada Síndrome da Puberdade. Cada arco
+        apresenta personagens com problemas próprios, mostrando como
+        inseguranças, expectativas e sentimentos podem afetar a vida cotidiana.
+      </p>
+      <p>
+        A obra combina elementos sobrenaturais com temas como identidade,
+        amizade, família, solidão e a importância de ser compreendido.
+        O relacionamento de Sakuta e Mai é um dos pontos centrais da narrativa.
+      </p>
+    </article>
 
-  <aside class="glass reveal">
-    <h3>🌙 Ficha do anime</h3>
-    <div class="fact"><strong>Nome japonês</strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</div>
-    <div class="fact"><strong>Gêneros</strong>Romance, drama, sobrenatural</div>
-    <div class="fact"><strong>Obra original</strong>Light novel de Hajime Kamoshida</div>
-    <div class="fact"><strong>Estúdio da primeira temporada</strong>CloverWorks</div>
-    <div class="fact"><strong>Personagens centrais</strong>Sakuta Azusagawa e Mai Sakurajima</div>
-    <div class="fact"><strong>Tema marcante</strong>A chamada Síndrome da Puberdade</div>
-    <p class="warning">A ficha resume a obra; a franquia também inclui filmes e continuações.</p>
-  </aside>
-</div>
+    <aside class="panel reveal">
+      <h3>🌙 Informações do anime</h3>
+      <div class="fact"><strong>Título original</strong>Seishun Buta Yarō wa Bunny Girl Senpai no Yume o Minai</div>
+      <div class="fact"><strong>Gêneros</strong>Romance, drama e sobrenatural</div>
+      <div class="fact"><strong>Obra original</strong>Light novel</div>
+      <div class="fact"><strong>Autor</strong>Hajime Kamoshida</div>
+      <div class="fact"><strong>Estúdio da série de TV</strong>CloverWorks</div>
+      <div class="fact"><strong>Fenômeno central</strong>Síndrome da Puberdade</div>
+    </aside>
+  </div>
 </section>
 
 <section id="personagens">
-<div class="section-heading reveal">
-  <h2>Personagens principais ♡</h2>
-  <p>Conheça algumas das pessoas que fazem parte desse universo. Cada uma possui sua própria história.</p>
-</div>
+  <div class="heading reveal">
+    <small>character archive</small>
+    <h2>Personagens <span class="gradient">principais</span></h2>
+    <p>Sem fotos aleatórias: nomes, descrições e símbolos em um visual inspirado no universo noturno do anime.</p>
+  </div>
 
-<div class="cards">
-  <article class="glass character reveal">
-    <div class="character-visual">🐰</div>
-    <h3>Mai Sakurajima</h3>
-    <p>Uma atriz conhecida que se afasta da vida pública. Inteligente, séria e determinada, Mai tenta lidar com a sensação de ser ignorada e com as expectativas colocadas sobre ela.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
+  <div class="cards">
+    <article class="panel character reveal">
+      <div class="character-symbol">01</div>
+      <p class="role">A SENPAI</p>
+      <h3>Mai Sakurajima</h3>
+      <p>Atriz conhecida que decide se afastar da carreira. Inteligente, reservada e determinada, Mai enfrenta um fenômeno que faz as pessoas deixarem de percebê-la.</p>
+      <span class="tag">Atriz</span><span class="tag">Protagonista</span>
+    </article>
 
-  <article class="glass character reveal">
-    <div class="character-visual">🌌</div>
-    <h3>Sakuta Azusagawa</h3>
-    <p>Um estudante direto e observador que não tem medo de ajudar quem está passando por situações difíceis. Sua relação com Mai é um dos centros da história.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
+    <article class="panel character reveal">
+      <div class="character-symbol">02</div>
+      <p class="role">O PROTAGONISTA</p>
+      <h3>Sakuta Azusagawa</h3>
+      <p>Estudante sincero e observador. Ele procura compreender os fenômenos estranhos e ajudar as pessoas envolvidas, mesmo quando ninguém mais parece acreditar nelas.</p>
+      <span class="tag">Estudante</span><span class="tag">Observador</span>
+    </article>
 
-  <article class="glass character reveal">
-    <div class="character-visual">💙</div>
-    <h3>Tomoe Koga</h3>
-    <p>Uma estudante que se preocupa bastante com a opinião das outras pessoas. Seu arco aborda amizades, pressão social e o desejo de ser aceita.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
+    <article class="panel character reveal">
+      <div class="character-symbol">03</div>
+      <p class="role">A ESTUDANTE</p>
+      <h3>Tomoe Koga</h3>
+      <p>Uma estudante preocupada com a opinião dos outros. Sua história aborda a pressão social, as amizades e a vontade de pertencer a um grupo.</p>
+      <span class="tag">Amizade</span><span class="tag">Escola</span>
+    </article>
 
-  <article class="glass character reveal">
-    <div class="character-visual">🔬</div>
-    <h3>Rio Futaba</h3>
-    <p>Amiga de Sakuta e integrante do clube de ciências. Costuma tentar encontrar explicações racionais para os acontecimentos estranhos.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
+    <article class="panel character reveal">
+      <div class="character-symbol">04</div>
+      <p class="role">A CIENTISTA</p>
+      <h3>Rio Futaba</h3>
+      <p>Amiga de Sakuta e integrante do clube de ciências. Ela costuma analisar os acontecimentos por uma perspectiva racional e ajuda a investigar os mistérios.</p>
+      <span class="tag">Ciência</span><span class="tag">Mistério</span>
+    </article>
 
-  <article class="glass character reveal">
-    <div class="character-visual">🎤</div>
-    <h3>Nodoka Toyohama</h3>
-    <p>Integrante de um grupo de idols e meia-irmã de Mai. Sua história envolve comparações, identidade e a busca por seu próprio espaço.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
+    <article class="panel character reveal">
+      <div class="character-symbol">05</div>
+      <p class="role">A IDOL</p>
+      <h3>Nodoka Toyohama</h3>
+      <p>Uma idol e meia-irmã de Mai. Sua trajetória explora comparações, identidade e as dificuldades de encontrar seu próprio lugar.</p>
+      <span class="tag">Música</span><span class="tag">Identidade</span>
+    </article>
 
-  <article class="glass character reveal">
-    <div class="character-visual">🌸</div>
-    <h3>Shoko Makinohara</h3>
-    <p>Uma personagem misteriosa que tem uma ligação importante com o passado de Sakuta. Sua presença influencia vários acontecimentos da narrativa.</p>
-    <a href="https://ao-buta.com/tv/character/" target="_blank" rel="noopener">Perfil oficial ↗</a>
-  </article>
-</div>
+    <article class="panel character reveal">
+      <div class="character-symbol">06</div>
+      <p class="role">A GAROTA MISTERIOSA</p>
+      <h3>Shoko Makinohara</h3>
+      <p>Uma personagem ligada a acontecimentos importantes da vida de Sakuta. Sua presença tem consequências significativas para a história.</p>
+      <span class="tag">Mistério</span><span class="tag">Memórias</span>
+    </article>
+
+    <article class="panel character reveal">
+      <div class="character-symbol">07</div>
+      <p class="role">A IRMÃ</p>
+      <h3>Kaede Azusagawa</h3>
+      <p>Irmã mais nova de Sakuta. Sua história é emocionalmente importante e aborda dificuldades pessoais, apoio familiar e recuperação.</p>
+      <span class="tag">Família</span><span class="tag">Superação</span>
+    </article>
+  </div>
 </section>
 
 <section id="galeria">
-<div class="section-heading reveal">
-  <h2>Dream Gallery ✧</h2>
-  <p>Uma galeria temática para entrar no clima do anime. Os cartões abaixo são ilustrações decorativas feitas com CSS e emojis; não são imagens oficiais dos personagens.</p>
-</div>
+  <div class="heading reveal">
+    <small>dream scenery</small>
+    <h2>Atmosferas do <span class="gradient">universo</span></h2>
+    <p>Cenas abstratas inspiradas na atmosfera da obra, com brilhos e cores noturnas. Não são fotografias nem ilustrações oficiais.</p>
+  </div>
 
-<div class="gallery-grid reveal">
-  <div class="gallery-item">🌙<span>Noite dos sonhos</span></div>
-  <div class="gallery-item">🐰<span>Mistério da biblioteca</span></div>
-  <div class="gallery-item">🌊<span>Mar e lembranças</span></div>
-  <div class="gallery-item">💌<span>Cartas do coração</span></div>
-  <div class="gallery-item">✨<span>Estrelas e desejos</span></div>
-  <div class="gallery-item">💜<span>Um mundo de memórias</span></div>
-</div>
+  <div class="gallery reveal">
+    <div class="scene"><div class="symbol">☾</div><span>O céu dos sonhos</span></div>
+    <div class="scene"><div class="symbol">✧</div><span>Segredos da noite</span></div>
+    <div class="scene"><div class="symbol">♡</div><span>Entre sentimentos</span></div>
+    <div class="scene"><div class="symbol">∞</div><span>Memórias sem fim</span></div>
+    <div class="scene"><div class="symbol">♧</div><span>O mistério da adolescência</span></div>
+    <div class="scene"><div class="symbol">⋆</div><span>Um desejo distante</span></div>
+  </div>
 </section>
 
 <section id="jogos">
-<div class="section-heading reveal">
-  <h2>Área de jogos 🎮</h2>
-  <p>Teste o que você sabe, acumule pontos e descubra se você é um verdadeiro fã de Bunny Girl Senpai!</p>
-</div>
-
-<div class="game-tabs">
-  <button class="tab active" onclick="showGame('quiz',this)">🧠 Quiz</button>
-  <button class="tab" onclick="showGame('truefalse',this)">✨ Verdadeiro ou falso</button>
-  <button class="tab" onclick="showGame('memory',this)">🃏 Jogo da memória</button>
-  <button class="tab" onclick="showGame('personality',this)">💗 Seu resultado</button>
-</div>
-
-<div id="quiz" class="game-box glass">
-  <h3>Quiz do universo</h3>
-  <p>Responda às perguntas e veja quantos pontos consegue conquistar.</p>
-  <div class="progress"><div id="progress-bar"></div></div>
-  <div class="score">Pontos: <span id="score">0</span></div>
-  <p id="question">Preparando a primeira pergunta...</p>
-  <div class="answers" id="answers"></div>
-  <p id="feedback" aria-live="polite"></p>
-  <button class="btn btn-primary" id="next" onclick="nextQuestion()">Próxima pergunta →</button>
-  <button class="btn btn-secondary" onclick="restartQuiz()">Recomeçar ↻</button>
-</div>
-
-<div id="truefalse" class="game-box glass" style="display:none">
-  <h3>Verdadeiro ou falso?</h3>
-  <p>Leia a frase e escolha sua resposta.</p>
-  <div class="progress"><div id="tf-progress" style="width:0"></div></div>
-  <div class="score">Pontos: <span id="tf-score">0</span></div>
-  <p id="tf-question" style="font-size:1.2rem;font-weight:900;margin:25px 0">Carregando...</p>
-  <div class="answers">
-    <button class="answer" onclick="answerTF(true)">✔ Verdadeiro</button>
-    <button class="answer" onclick="answerTF(false)">✘ Falso</button>
+  <div class="heading reveal">
+    <small>interactive zone</small>
+    <h2>Desafie seu <span class="gradient">conhecimento</span></h2>
+    <p>Quatro experiências interativas para testar sua memória e descobrir sua afinidade com o universo de AoButa.</p>
   </div>
-  <p id="tf-feedback" aria-live="polite"></p>
-  <button class="btn btn-primary" onclick="nextTF()">Próxima →</button>
-  <button class="btn btn-secondary" onclick="restartTF()">Recomeçar ↻</button>
-</div>
 
-<div id="memory" class="game-box glass" style="display:none">
-  <h3>Jogo da memória</h3>
-  <p>Encontre os pares de símbolos. Você consegue completar todos?</p>
-  <p style="margin-top:10px">Movimentos: <strong id="moves">0</strong> · Pares: <strong id="pairs">0</strong>/6</p>
-  <div class="memory-grid" id="memory-grid"></div>
-  <p id="memory-feedback" aria-live="polite"></p>
-  <button class="btn btn-primary" onclick="startMemory()">Novo jogo ↻</button>
-</div>
+  <div class="tabs">
+    <button class="tab active" onclick="showGame('quiz',this)">Quiz</button>
+    <button class="tab" onclick="showGame('verdade',this)">Verdadeiro ou falso</button>
+    <button class="tab" onclick="showGame('memoria',this)">Memória</button>
+    <button class="tab" onclick="showGame('perfil',this)">Seu perfil</button>
+  </div>
 
-<div id="personality" class="game-box glass" style="display:none">
-  <h3>Qual é a sua energia?</h3>
-  <p>Escolha a alternativa que mais combina com você.</p>
-  <p id="personality-question" style="font-size:1.2rem;font-weight:900;margin:25px 0">Quando alguém precisa de ajuda, você...</p>
-  <div class="answers" id="personality-answers"></div>
-  <p id="personality-result" aria-live="polite"></p>
-  <button class="btn btn-secondary" onclick="startPersonality()">Fazer novamente ↻</button>
-</div>
+  <div id="quiz" class="panel game">
+    <h3>✦ Quiz de AoButa</h3>
+    <p>Acumule pontos respondendo corretamente.</p>
+    <div class="progress"><div id="qbar"></div></div>
+    <p class="score">Pontuação: <span id="qscore">0</span></p>
+    <p id="question">Carregando pergunta...</p>
+    <div class="answers" id="answers"></div>
+    <p class="feedback" id="qfeedback" aria-live="polite"></p>
+    <button class="btn primary" id="qnext" onclick="nextQ()">Próxima →</button>
+    <button class="btn secondary" onclick="restartQ()">Recomeçar ↻</button>
+  </div>
+
+  <div id="verdade" class="panel game" style="display:none">
+    <h3>✦ Verdadeiro ou falso?</h3>
+    <p class="score">Pontuação: <span id="vscore">0</span></p>
+    <div class="progress"><div id="vbar"></div></div>
+    <p id="tf-question">Preparando...</p>
+    <div class="answers">
+      <button class="answer" onclick="answerTF(true)">Verdadeiro ✧</button>
+      <button class="answer" onclick="answerTF(false)">Falso ☾</button>
+    </div>
+    <p class="feedback" id="vfeedback" aria-live="polite"></p>
+    <button class="btn primary" onclick="nextTF()">Continuar →</button>
+    <button class="btn secondary" onclick="restartTF()">Recomeçar ↻</button>
+  </div>
+
+  <div id="memoria" class="panel game" style="display:none">
+    <h3>✦ Memória lunar</h3>
+    <p>Encontre todos os pares de símbolos. Cada movimento conta!</p>
+    <p style="margin-top:12px">Movimentos: <span id="moves">0</span> · Pares: <span id="pairs">0</span>/6</p>
+    <div class="memory" id="memory"></div>
+    <p class="feedback" id="mfeedback" aria-live="polite"></p>
+    <button class="btn primary" onclick="startMemory()">Novo jogo ↻</button>
+  </div>
+
+  <div id="perfil" class="panel game" style="display:none">
+    <h3>✦ Qual é sua energia?</h3>
+    <p>Escolha as alternativas que mais combinam com você.</p>
+    <p id="p-question">Quando um amigo precisa de ajuda, você...</p>
+    <div class="answers" id="panswers"></div>
+    <p class="feedback" id="pfeedback" aria-live="polite"></p>
+    <button class="btn secondary" onclick="startPersonality()">Refazer teste ↻</button>
+  </div>
 </section>
 
 <section id="curiosidades">
-<div class="section-heading reveal">
-  <h2>Curiosidades do universo 🌌</h2>
-  <p>Alguns detalhes que ajudam a entender a proposta da obra.</p>
-</div>
+  <div class="heading reveal">
+    <small>hidden meanings</small>
+    <h2>Curiosidades & <span class="gradient">mistérios</span></h2>
+    <p>Algumas das ideias que tornam essa história especial.</p>
+  </div>
 
-<div class="glass reveal">
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>01 · A Síndrome da Puberdade</h3>
-      <p>É o nome dado aos fenômenos inexplicáveis que aparecem na história. Eles funcionam como uma representação sobrenatural de conflitos emocionais e sociais vividos pelos personagens.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>02 · Uma protagonista que ninguém vê</h3>
-      <p>O encontro de Sakuta com Mai na biblioteca estabelece o mistério inicial: por que uma pessoa tão conhecida parece desaparecer da percepção dos outros?</p>
-    </div>
-    <div class="timeline-item">
-      <h3>03 · Mais do que romance</h3>
-      <p>A relação entre Sakuta e Mai é importante, mas a obra também explora amizade, família, autoestima, luto, expectativas e a dificuldade de se comunicar.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>04 · A importância das conversas</h3>
-      <p>Em muitos arcos, ouvir com atenção e tentar compreender outra pessoa é tão importante quanto investigar o próprio fenômeno misterioso.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>05 · A franquia continua</h3>
-      <p>Além da primeira série de TV, a franquia tem filmes e outras adaptações. Consulte os canais oficiais para conferir a ordem e as novidades.</p>
+  <div class="panel reveal">
+    <div class="timeline">
+      <article>
+        <h3>01 · Síndrome da Puberdade</h3>
+        <p>Os fenômenos sobrenaturais da obra refletem conflitos pessoais e situações que os personagens têm dificuldade para enfrentar.</p>
+      </article>
+      <article>
+        <h3>02 · Invisibilidade social</h3>
+        <p>O mistério de Mai introduz a ideia de deixar de ser percebido pelos outros, mesmo estando presente fisicamente.</p>
+      </article>
+      <article>
+        <h3>03 · O valor da compreensão</h3>
+        <p>Sakuta tenta ouvir as pessoas sem reduzir seus problemas a julgamentos. Essa postura é essencial em vários arcos.</p>
+      </article>
+      <article>
+        <h3>04 · Romance e drama</h3>
+        <p>O relacionamento de Sakuta e Mai se desenvolve junto a temas como confiança, comunicação e apoio mútuo.</p>
+      </article>
+      <article>
+        <h3>05 · A franquia</h3>
+        <p>A obra conta com uma série de TV, filmes e continuações. A ordem de lançamento pode ajudar quem deseja acompanhar toda a história.</p>
+      </article>
     </div>
   </div>
-</div>
 </section>
 
 <section>
-<div class="glass reveal" style="text-align:center">
-  <h2 style="font-family:'Playfair Display',serif;margin-bottom:15px">“Cada sonho guarda uma história.”</h2>
-  <p style="line-height:1.9;color:#5d6484">Obrigado por visitar este pequeno universo inspirado em Bunny Girl Senpai.</p>
-  <div class="buttons" style="justify-content:center">
-    <a class="btn btn-primary" href="#inicio">Voltar ao começo ↑</a>
-    <a class="btn btn-secondary" href="https://rascaldoesnotdream.com/" target="_blank" rel="noopener">Site oficial ↗</a>
+  <div class="panel reveal" style="text-align:center">
+    <p class="eyebrow">UNTIL WE MEET AGAIN</p>
+    <h2 style="font-family:Cinzel,serif;margin:18px 0">Somewhere between dreams and reality.</h2>
+    <p>Um universo de fã criado com carinho para quem gosta de Bunny Girl Senpai.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn primary" href="#inicio">Voltar ao começo ↑</a>
+      <a class="btn secondary" href="https://ao-buta.com/" target="_blank" rel="noopener">Universo oficial ↗</a>
+    </div>
   </div>
-</div>
 </section>
 
 </main>
 
 <footer>
-  <strong>☾ AO BUTA CLUB</strong>
-  <p>Um site de fã criado para fins de estudo e entretenimento.</p>
-  <p>Não é afiliado aos criadores oficiais. Os direitos da obra pertencem aos seus respectivos titulares.</p>
-  <p>Feito com ♡, estrelas e sonhos.</p>
+  <strong>✦ AO BUTA — DREAM UNIVERSE ✦</strong>
+  <p>Projeto de fã para fins de estudo e entretenimento.</p>
+  <p>Não afiliado aos criadores oficiais. Todos os direitos da obra pertencem aos seus respectivos titulares.</p>
+  <p>Feito sob um céu cheio de estrelas ♡</p>
 </footer>
 
-<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
+<button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
 
 <script>
-// ESTRELAS ANIMADAS
-const canvas = document.getElementById("stars");
+// CÉU ANIMADO
+const canvas = document.getElementById("universe");
 const ctx = canvas.getContext("2d");
 let stars = [];
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  stars = Array.from({length:90}, () => ({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2+0.4,
-    speed:Math.random()*0.35+0.08,
-    alpha:Math.random()
+function resize() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * dpr;
+  canvas.height = innerHeight * dpr;
+  canvas.style.width = innerWidth + "px";
+  canvas.style.height = innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  stars = Array.from({length: Math.min(150, Math.floor(innerWidth / 7))}, () => ({
+    x: Math.random() * innerWidth,
+    y: Math.random() * innerHeight,
+    r: Math.random() * 1.6 + .3,
+    speed: Math.random() * .22 + .04,
+    phase: Math.random() * Math.PI * 2
   }));
 }
 
-function animateStars() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+let frame = 0;
+function drawStars() {
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  frame += .015;
   stars.forEach(s => {
     s.y -= s.speed;
-    if(s.y < 0) {
-      s.y = canvas.height;
-      s.x = Math.random()*canvas.width;
+    if (s.y < -2) {
+      s.y = innerHeight + 2;
+      s.x = Math.random() * innerWidth;
     }
-    s.alpha += (Math.random()-.5)*.06;
-    s.alpha = Math.max(.2,Math.min(1,s.alpha));
+    const opacity = .3 + .7 * (Math.sin(frame + s.phase) + 1) / 2;
     ctx.beginPath();
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(231,218,255,${opacity})`;
     ctx.fill();
   });
-  requestAnimationFrame(animateStars);
+  requestAnimationFrame(drawStars);
 }
+resize();
+drawStars();
+addEventListener("resize", resize);
 
-resizeCanvas();
-animateStars();
-window.addEventListener("resize",resizeCanvas);
-
-// ANIMAÇÃO DE ENTRADA DAS SEÇÕES
-const observer = new IntersectionObserver(entries => {
+// ENTRADA SUAVE
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add("show");
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
     }
   });
-},{threshold:.12});
+}, {threshold:.12});
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-// TROCA DE JOGOS
-function showGame(id,button) {
-  document.querySelectorAll(".game-box").forEach(box => box.style.display="none");
-  document.getElementById(id).style.display="block";
-  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-  button.classList.add("active");
+// TROCAR JOGOS
+function showGame(id, btn) {
+  document.querySelectorAll(".game").forEach(el => el.style.display = "none");
+  document.getElementById(id).style.display = "block";
+  document.querySelectorAll(".tab").forEach(el => el.classList.remove("active"));
+  btn.classList.add("active");
 }
 
 // QUIZ
-const questions = [
-  {q:"Quem é a atriz que Sakuta encontra na biblioteca?",a:["Tomoe Koga","Mai Sakurajima","Rio Futaba","Nodoka Toyohama"],c:1,e:"Mai é a atriz que aparece com a fantasia de coelhinha."},
-  {q:"Qual é o nome do protagonista masculino?",a:["Sakuta Azusagawa","Keji Mizoguchi","Hajime Kamoshida","Yuma Kunimi"],c:0,e:"Sakuta é o estudante que investiga os fenômenos."},
-  {q:"Como são chamados os fenômenos misteriosos da obra?",a:["Síndrome do Sono","Síndrome da Puberdade","Efeito Lunar","Mistério Escolar"],c:1,e:"A Síndrome da Puberdade está no centro dos acontecimentos."},
-  {q:"Qual é o gênero que aparece junto ao romance?",a:["Faroeste","Sobrenatural","Esporte","Documentário"],c:1,e:"A história combina romance, drama e elementos sobrenaturais."},
-  {q:"Quem costuma buscar explicações científicas para os fenômenos?",a:["Rio Futaba","Mai Sakurajima","Shoko Makinohara","Nodoka Toyohama"],c:0,e:"Rio Futaba é conhecida por seu interesse científico."},
-  {q:"Qual estúdio produziu a primeira temporada do anime?",a:["Studio Ghibli","CloverWorks","MAPPA","Bones"],c:1,e:"A primeira temporada foi produzida pelo estúdio CloverWorks."},
-  {q:"Quem é a irmã mais nova de Sakuta?",a:["Tomoe","Kaede","Mai","Rio"],c:1,e:"Kaede é a irmã mais nova de Sakuta."},
-  {q:"Quem escreveu a light novel original?",a:["Hajime Kamoshida","Sakuta Azusagawa","Soichi Masui","Kaito Ishikawa"],c:0,e:"A obra original foi escrita por Hajime Kamoshida."}
+const quiz = [
+  {q:"Quem é a atriz que Sakuta encontra na biblioteca?",a:["Tomoe Koga","Mai Sakurajima","Rio Futaba","Nodoka Toyohama"],c:1,e:"Mai Sakurajima é a atriz que aparece vestida de coelhinha."},
+  {q:"Quem é o protagonista masculino?",a:["Sakuta Azusagawa","Hajime Kamoshida","Keji Mizoguchi","Yuma Kunimi"],c:0,e:"Sakuta é o estudante que investiga os fenômenos."},
+  {q:"Como são chamados os fenômenos misteriosos?",a:["Efeito Lunar","Síndrome da Puberdade","Sonho Azul","Efeito Temporal"],c:1,e:"A Síndrome da Puberdade é central à narrativa."},
+  {q:"Qual é o estúdio da primeira temporada de TV?",a:["MAPPA","Bones","CloverWorks","Wit Studio"],c:2,e:"A série de TV foi produzida pela CloverWorks."},
+  {q:"Quem é conhecida por seu interesse em ciência?",a:["Mai","Rio Futaba","Shoko","Kaede"],c:1,e:"Rio Futaba faz parte do clube de ciências."},
+  {q:"Quem é a irmã mais nova de Sakuta?",a:["Nodoka","Tomoe","Kaede","Mai"],c:2,e:"Kaede é a irmã mais nova de Sakuta."},
+  {q:"Quem escreveu a light novel original?",a:["Hajime Kamoshida","Keji Mizoguchi","Sakuta Azusagawa","Soichi Masui"],c:0,e:"Hajime Kamoshida é o autor da obra original."},
+  {q:"Qual é uma das principais temáticas da obra?",a:["Corridas","Culinária","Sentimentos e identidade","Viagens espaciais"],c:2,e:"A história explora sentimentos, identidade e relações humanas."}
 ];
 
-let qIndex=0, score=0, answered=false;
+let qi = 0, qs = 0, qdone = false;
 
-function renderQuestion() {
-  const q=questions[qIndex];
-  document.getElementById("question").textContent=q.q;
-  document.getElementById("score").textContent=score;
-  document.getElementById("feedback").textContent="";
-  document.getElementById("progress-bar").style.width=(qIndex/questions.length*100)+"%";
-  const box=document.getElementById("answers");
-  box.innerHTML="";
-  answered=false;
-  q.a.forEach((answer,i)=>{
-    const b=document.createElement("button");
-    b.className="answer";
-    b.textContent=answer;
-    b.onclick=()=>chooseAnswer(i,b);
+function renderQ() {
+  qdone = false;
+  const q = quiz[qi];
+  document.getElementById("question").textContent = q.q;
+  document.getElementById("qscore").textContent = qs;
+  document.getElementById("qfeedback").textContent = "";
+  document.getElementById("qbar").style.width = (qi / quiz.length * 100) + "%";
+  const box = document.getElementById("answers");
+  box.innerHTML = "";
+  q.a.forEach((answer, i) => {
+    const b = document.createElement("button");
+    b.className = "answer";
+    b.textContent = answer;
+    b.onclick = () => chooseQ(i, b);
     box.appendChild(b);
   });
-  document.getElementById("next").textContent=qIndex===questions.length-1?"Ver resultado ✨":"Próxima pergunta →";
+  document.getElementById("qnext").textContent = "Próxima →";
+  document.getElementById("qnext").onclick = nextQ;
 }
 
-function chooseAnswer(i,button) {
-  if(answered) return;
-  answered=true;
-  const q=questions[qIndex];
-  document.querySelectorAll("#answers .answer").forEach(b=>b.disabled=true);
-  if(i===q.c) {
-    score++;
-    document.getElementById("feedback").textContent="✨ Correto! "+q.e;
+function chooseQ(i, btn) {
+  if (qdone) return;
+  qdone = true;
+  const q = quiz[qi];
+  document.querySelectorAll("#answers button").forEach(b => b.disabled = true);
+  if (i === q.c) {
+    qs++;
+    document.getElementById("qfeedback").textContent = "✦ Acertou! " + q.e;
+    btn.style.borderColor = "#73d6b5";
   } else {
-    document.getElementById("feedback").textContent="🌙 Ainda não! "+q.e;
+    document.getElementById("qfeedback").textContent = "☾ " + q.e;
+    btn.style.borderColor = "#d88bad";
   }
-  document.getElementById("score").textContent=score;
-  button.style.background=i===q.c?"#d6f5e9":"#f9dce9";
-  document.getElementById("progress-bar").style.width=((qIndex+1)/questions.length*100)+"%";
+  document.getElementById("qscore").textContent = qs;
+  document.getElementById("qbar").style.width = ((qi + 1) / quiz.length * 100) + "%";
 }
 
-function nextQuestion() {
-  if(!answered) {
-    document.getElementById("feedback").textContent="Escolha uma resposta primeiro! 💗";
+function nextQ() {
+  if (!qdone) {
+    document.getElementById("qfeedback").textContent = "Escolha uma resposta primeiro ✧";
     return;
   }
-  if(qIndex<questions.length-1) {
-    qIndex++;
-    renderQuestion();
+  if (qi < quiz.length - 1) {
+    qi++;
+    renderQ();
   } else {
-    document.getElementById("question").textContent="Você fez "+score+" de "+questions.length+" pontos!";
-    document.getElementById("answers").innerHTML="";
-    document.getElementById("feedback").textContent=score===questions.length
-      ?"PERFEITO! Você conhece muito bem o universo de AoButa! 🌟"
-      :score>=5
-      ?"Muito bom! Você já conhece bastante do anime. 💗"
-      :"Continue explorando o universo e tente novamente! 🌙";
-    document.getElementById("next").textContent="Jogar novamente ↻";
-    document.getElementById("next").onclick=restartQuiz;
+    document.getElementById("question").textContent = `Resultado: ${qs}/${quiz.length} pontos`;
+    document.getElementById("answers").innerHTML = "";
+    document.getElementById("qfeedback").textContent =
+      qs === quiz.length ? "Perfeito! Você domina esse universo. ✨" :
+      qs >= 5 ? "Muito bem! Você conhece bastante do anime. ♡" :
+      "Continue explorando a história e tente de novo. ☾";
+    document.getElementById("qnext").textContent = "Jogar novamente ↻";
+    document.getElementById("qnext").onclick = restartQ;
   }
 }
 
-function restartQuiz() {
-  qIndex=0; score=0;
-  document.getElementById("next").onclick=nextQuestion;
-  renderQuestion();
-}
-
-renderQuestion();
+function restartQ() { qi = 0; qs = 0; renderQ(); }
+renderQ();
 
 // VERDADEIRO OU FALSO
-const tfQuestions=[
-  {q:"Mai Sakurajima é uma atriz.",a:true,e:"Mai é uma atriz que está afastada da carreira no início da história."},
-  {q:"Sakuta é o nome da irmã de Mai.",a:false,e:"Sakuta é o protagonista; sua irmã mais nova se chama Kaede."},
-  {q:"Rio Futaba é amiga de Sakuta.",a:true,e:"Rio é uma das amigas de Sakuta e ajuda a pensar sobre os mistérios."},
-  {q:"A obra mistura romance e elementos sobrenaturais.",a:true,e:"Esses são dois elementos importantes do anime."},
-  {q:"A história original é uma light novel.",a:true,e:"A série foi adaptada de light novels escritas por Hajime Kamoshida."},
-  {q:"Tomoe Koga é uma professora adulta.",a:false,e:"Tomoe é uma estudante do ensino médio."}
+const vf = [
+  {q:"Mai Sakurajima é uma atriz.",a:true,e:"Mai é uma atriz conhecida."},
+  {q:"Sakuta é o nome da irmã de Mai.",a:false,e:"Sakuta é o protagonista; sua irmã é Kaede."},
+  {q:"Rio Futaba é amiga de Sakuta.",a:true,e:"Rio é amiga de Sakuta e participa das investigações."},
+  {q:"A obra mistura romance e elementos sobrenaturais.",a:true,e:"Esses elementos aparecem ao longo da narrativa."},
+  {q:"A história original é uma light novel.",a:true,e:"O anime é adaptado das light novels de Hajime Kamoshida."},
+  {q:"Tomoe Koga é uma professora adulta.",a:false,e:"Tomoe é uma estudante."}
 ];
 
-let tfIndex=0,tfScore=0,tfAnswered=false;
+let vi = 0, vs = 0, vd = false;
 
 function renderTF() {
-  tfAnswered=false;
-  if(tfIndex>=tfQuestions.length) {
-    document.getElementById("tf-question").textContent="Fim do jogo! Você fez "+tfScore+" de "+tfQuestions.length+" pontos.";
-    document.getElementById("tf-feedback").textContent="Jogue novamente para tentar melhorar sua pontuação! ✨";
-    document.getElementById("tf-progress").style.width="100%";
-    return;
-  }
-  document.getElementById("tf-question").textContent=tfQuestions[tfIndex].q;
-  document.getElementById("tf-score").textContent=tfScore;
-  document.getElementById("tf-feedback").textContent="";
-  document.getElementById("tf-progress").style.width=(tfIndex/tfQuestions.length*100)+"%";
+  vd = false;
+  document.getElementById("vscore").textContent = vs;
+  document.getElementById("vfeedback").textContent = "";
+  document.getElementById("vbar").style.width = (vi / vf.length * 100) + "%";
+  document.getElementById("tf-question").textContent = vi >= vf.length
+    ? `Fim do jogo! Você fez ${vs}/${vf.length} pontos.`
+    : vf[vi].q;
 }
 
 function answerTF(value) {
-  if(tfAnswered || tfIndex>=tfQuestions.length) return;
-  tfAnswered=true;
-  const q=tfQuestions[tfIndex];
-  if(value===q.a) {
-    tfScore++;
-    document.getElementById("tf-feedback").textContent="✨ Acertou! "+q.e;
+  if (vd || vi >= vf.length) return;
+  vd = true;
+  if (value === vf[vi].a) {
+    vs++;
+    document.getElementById("vfeedback").textContent = "✦ Correto! " + vf[vi].e;
   } else {
-    document.getElementById("tf-feedback").textContent="🌙 Não foi dessa vez. "+q.e;
+    document.getElementById("vfeedback").textContent = "☾ " + vf[vi].e;
   }
-  document.getElementById("tf-score").textContent=tfScore;
-  document.getElementById("tf-progress").style.width=((tfIndex+1)/tfQuestions.length*100)+"%";
+  document.getElementById("vscore").textContent = vs;
+  document.getElementById("vbar").style.width = ((vi + 1) / vf.length * 100) + "%";
 }
 
 function nextTF() {
-  if(tfIndex<tfQuestions.length) {
-    if(!tfAnswered) {
-      document.getElementById("tf-feedback").textContent="Escolha verdadeiro ou falso primeiro! 💗";
-      return;
-    }
-    tfIndex++;
-    renderTF();
-  } else {
-    restartTF();
+  if (vi >= vf.length) { restartTF(); return; }
+  if (!vd) {
+    document.getElementById("vfeedback").textContent = "Escolha uma alternativa primeiro ✧";
+    return;
   }
-}
-
-function restartTF() {
-  tfIndex=0; tfScore=0;
+  vi++;
   renderTF();
 }
 
+function restartTF() { vi = 0; vs = 0; renderTF(); }
 renderTF();
 
 // JOGO DA MEMÓRIA
-const symbols=["🌙","🐰","💗","🌊","✨","💜"];
-let firstCard=null, lockBoard=false, matched=0, moves=0;
+const symbols = ["☾","✦","♡","∞","♧","✧"];
+let first = null, locked = false, pairs = 0, moves = 0;
 
 function startMemory() {
-  firstCard=null; lockBoard=false; matched=0; moves=0;
-  document.getElementById("moves").textContent=moves;
-  document.getElementById("pairs").textContent=matched;
-  document.getElementById("memory-feedback").textContent="";
-  const deck=[...symbols,...symbols].sort(()=>Math.random()-.5);
-  const grid=document.getElementById("memory-grid");
-  grid.innerHTML="";
-  deck.forEach(symbol=>{
-    const card=document.createElement("button");
-    card.className="memory-card";
-    card.textContent="✦";
-    card.setAttribute("aria-label","Carta fechada");
-    card.dataset.symbol=symbol;
-    card.onclick=()=>flipCard(card);
-    grid.appendChild(card);
+  first = null; locked = false; pairs = 0; moves = 0;
+  document.getElementById("moves").textContent = moves;
+  document.getElementById("pairs").textContent = pairs;
+  document.getElementById("mfeedback").textContent = "";
+  const deck = [...symbols, ...symbols].sort(() => Math.random() - .5);
+  const grid = document.getElementById("memory");
+  grid.innerHTML = "";
+  deck.forEach(sym => {
+    const b = document.createElement("button");
+    b.textContent = "✦";
+    b.dataset.sym = sym;
+    b.setAttribute("aria-label", "Carta fechada");
+    b.onclick = () => flip(b);
+    grid.appendChild(b);
   });
 }
 
-function flipCard(card) {
-  if(lockBoard || card.classList.contains("matched") || card===firstCard || card.textContent!=="✦") return;
-  card.textContent=card.dataset.symbol;
-  card.setAttribute("aria-label",card.dataset.symbol);
-  if(!firstCard) {
-    firstCard=card;
-    return;
-  }
+function flip(card) {
+  if (locked || card.classList.contains("matched") || card === first || card.textContent !== "✦") return;
+  card.textContent = card.dataset.sym;
+  card.setAttribute("aria-label", card.dataset.sym);
+  if (!first) { first = card; return; }
+
   moves++;
-  document.getElementById("moves").textContent=moves;
-  if(firstCard.dataset.symbol===card.dataset.symbol) {
-    firstCard.classList.add("matched");
+  document.getElementById("moves").textContent = moves;
+  if (first.dataset.sym === card.dataset.sym) {
+    first.classList.add("matched");
     card.classList.add("matched");
-    firstCard=null;
-    matched++;
-    document.getElementById("pairs").textContent=matched;
-    if(matched===symbols.length) {
-      document.getElementById("memory-feedback").textContent="Parabéns! Você encontrou todos os pares! 🌟";
+    first = null;
+    pairs++;
+    document.getElementById("pairs").textContent = pairs;
+    if (pairs === symbols.length) {
+      document.getElementById("mfeedback").textContent = `Você encontrou todos os pares em ${moves} movimentos! ✨`;
     }
   } else {
-    lockBoard=true;
-    const previous=firstCard;
-    firstCard=null;
-    setTimeout(()=>{
-      previous.textContent="✦";
-      card.textContent="✦";
-      previous.setAttribute("aria-label","Carta fechada");
-      card.setAttribute("aria-label","Carta fechada");
-      lockBoard=false;
-    },800);
+    locked = true;
+    const old = first;
+    first = null;
+    setTimeout(() => {
+      old.textContent = "✦";
+      card.textContent = "✦";
+      old.setAttribute("aria-label", "Carta fechada");
+      card.setAttribute("aria-label", "Carta fechada");
+      locked = false;
+    }, 850);
   }
 }
 
 startMemory();
 
 // TESTE DE PERSONALIDADE
-const personalityQuestions=[
+const personality = [
   {q:"Quando alguém precisa de ajuda, você...",a:[
-    ["Tento ajudar mesmo que seja difícil","sakuta"],
-    ["Escuto e tento entender","mai"],
-    ["Procuro uma solução lógica","rio"],
+    ["Tento ajudar de qualquer jeito","sakuta"],
+    ["Escuto e tento compreender","mai"],
+    ["Analiso o problema","rio"],
     ["Tento animar a pessoa","tomoe"]
   ]},
-  {q:"Qual cenário você escolheria?",a:[
-    ["Uma praia ao pôr do sol","sakuta"],
-    ["Uma biblioteca tranquila","mai"],
+  {q:"Qual lugar combina mais com você?",a:[
+    ["Um lugar tranquilo perto do mar","sakuta"],
+    ["Uma biblioteca silenciosa","mai"],
     ["Um laboratório cheio de ideias","rio"],
-    ["Um passeio com os amigos","tomoe"]
+    ["Um passeio com amigos","tomoe"]
   ]},
-  {q:"O que é mais importante para você?",a:[
+  {q:"O que você mais valoriza?",a:[
     ["Lealdade","sakuta"],
-    ["Ser compreendido","mai"],
+    ["Sinceridade","mai"],
     ["Conhecimento","rio"],
-    ["Pertencer a um grupo","tomoe"]
+    ["Amizade","tomoe"]
   ]}
 ];
 
-let pIndex=0, pScores={sakuta:0,mai:0,rio:0,tomoe:0};
+let pi = 0;
+let ps = {};
 
 function startPersonality() {
-  pIndex=0;
-  pScores={sakuta:0,mai:0,rio:0,tomoe:0};
-  renderPersonality();
+  pi = 0;
+  ps = {sakuta:0, mai:0, rio:0, tomoe:0};
+  renderP();
 }
 
-function renderPersonality() {
-  document.getElementById("personality-result").textContent="";
-  if(pIndex>=personalityQuestions.length) {
-    const best=Object.keys(pScores).sort((a,b)=>pScores[b]-pScores[a])[0];
-    const results={
-      sakuta:"🌌 Sua energia é Sakuta! Você valoriza lealdade, coragem e ajudar quem precisa.",
-      mai:"🐰 Sua energia é Mai! Você é determinado, valoriza sinceridade e quer ser compreendido.",
-      rio:"🔬 Sua energia é Rio! Você é curioso, analítico e gosta de entender como as coisas funcionam.",
-      tomoe:"💙 Sua energia é Tomoe! Você valoriza amizade, conexão e os momentos compartilhados."
+function renderP() {
+  const q = document.getElementById("p-question");
+  const box = document.getElementById("panswers");
+  const feedback = document.getElementById("pfeedback");
+  feedback.textContent = "";
+  box.innerHTML = "";
+
+  if (pi >= personality.length) {
+    const best = Object.keys(ps).sort((a,b) => ps[b] - ps[a])[0];
+    const results = {
+      sakuta:"🌌 Você combina com Sakuta: lealdade, coragem e disposição para ajudar.",
+      mai:"🐰 Você combina com Mai: sinceridade, determinação e autenticidade.",
+      rio:"🔬 Você combina com Rio: curiosidade, lógica e vontade de compreender.",
+      tomoe:"💙 Você combina com Tomoe: amizade, conexão e sensibilidade social."
     };
-    document.getElementById("personality-question").textContent="Seu resultado:";
-    document.getElementById("personality-answers").innerHTML="";
-    document.getElementById("personality-result").textContent=results[best];
+    q.textContent = "Seu resultado";
+    feedback.textContent = results[best];
     return;
   }
-  const q=personalityQuestions[pIndex];
-  document.getElementById("personality-question").textContent=q.q;
-  const box=document.getElementById("personality-answers");
-  box.innerHTML="";
-  q.a.forEach(([label,type])=>{
-    const b=document.createElement("button");
-    b.className="answer";
-    b.textContent=label;
-    b.onclick=()=>{
-      pScores[type]++;
-      pIndex++;
-      renderPersonality();
+
+  q.textContent = personality[pi].q;
+  personality[pi].a.forEach(([label, type]) => {
+    const b = document.createElement("button");
+    b.className = "answer";
+    b.textContent = label;
+    b.onclick = () => {
+      ps[type]++;
+      pi++;
+      renderP();
     };
     box.appendChild(b);
   });
